@@ -47,11 +47,8 @@ class Cli < Formula
 
   def install
     bin.install "hotdata" if OS.mac? && Hardware::CPU.arm?
-    generate_completions_from_executable(bin/"hotdata", "completions")
     bin.install "hotdata" if OS.mac? && Hardware::CPU.intel?
-    generate_completions_from_executable(bin/"hotdata", "completions")
     bin.install "hotdata" if OS.linux? && Hardware::CPU.arm?
-    generate_completions_from_executable(bin/"hotdata", "completions")
     bin.install "hotdata" if OS.linux? && Hardware::CPU.intel?
     generate_completions_from_executable(bin/"hotdata", "completions")
 
