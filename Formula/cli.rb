@@ -1,7 +1,7 @@
 class Cli < Formula
   desc "CLI tool for Hotdata.dev"
   homepage "https://www.hotdata.dev"
-  version "0.1.8"
+  version "0.1.9"
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.1.9/hotdata-cli-aarch64-apple-darwin.tar.xz"
