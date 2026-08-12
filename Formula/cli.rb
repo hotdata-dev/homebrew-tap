@@ -1,25 +1,25 @@
 class Cli < Formula
   desc "CLI tool for Hotdata.dev"
   homepage "https://www.hotdata.dev"
-  version "0.23.0"
+  version "0.24.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.23.0/hotdata-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "fcbb2c2fe7233358098adc367d4304119492fc9647a74e8b7a15ab91056bd527"
+      url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.24.0/hotdata-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "c0017c26f5acd70a939433d4081a67f00166088f55c8da7c1b8da7caf8c529a9"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.23.0/hotdata-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "87bb5d5419e8cbfc00da4475a301f5b01de9922aad3557b538e5a50c3df80c87"
+      url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.24.0/hotdata-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "cdaaee2fbdeeedd20e5268fd74f1e96fdd1cdf5f5e38defc1669df40224b1477"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.23.0/hotdata-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "2febc56974282b2044368753b65290847d9f4f3565b6460fd922763257566809"
+      url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.24.0/hotdata-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "e8236b29512fd75012fc118731ee74c6660ccc832670021b8effcc3ca54258ea"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.23.0/hotdata-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "ccc43cedd5d87903b82017ad874fbcf98e07e1b761bfa2f89c8e79d0d87d4d49"
+      url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.24.0/hotdata-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "fd05cd3c96937bb3c7236a448fe3dbcba7eafac898918632ea7f528862295405"
     end
   end
 
@@ -46,11 +46,19 @@ class Cli < Formula
   end
 
   def install
-    bin.install "hotdata" if OS.mac? && Hardware::CPU.arm?
-    bin.install "hotdata" if OS.mac? && Hardware::CPU.intel?
-    bin.install "hotdata" if OS.linux? && Hardware::CPU.arm?
-    bin.install "hotdata" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "hotdata"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "hotdata"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "hotdata"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "hotdata"
     generate_completions_from_executable(bin/"hotdata", "completions")
+    end
 
     install_binary_aliases!
 
