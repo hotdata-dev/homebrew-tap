@@ -1,25 +1,25 @@
 class Cli < Formula
   desc "CLI tool for Hotdata.dev"
   homepage "https://www.hotdata.dev"
-  version "0.28.0"
+  version "0.29.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.28.0/hotdata-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "2cf1832b3a944c52907736624a18ed850468bd29590dcbeb4be9082165565853"
+      url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.29.0/hotdata-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "c36d2e5d71a9538b7661c3dcdc3d42ba9a962ca2c85ea9dd0f8fa74617f0aa2e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.28.0/hotdata-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "74b3a00daf0da51f0f812a5a95e9adb276ee6de95d8f5956c2fc534dcfa428fc"
+      url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.29.0/hotdata-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "8b62cbaa119a6c39d3ac97dc9eca2bdbe62fbc7a14df77af3643ea24a4ff6e37"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.28.0/hotdata-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "0afe82d543389eae5e68d6f8105a3036b40a016bd3645276d9695e69f8339fd3"
+      url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.29.0/hotdata-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "3a87440e52aad54400cf942125564090bd4118b8d9d37cca99dd7f188e4184e2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.28.0/hotdata-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "fe020df77a8347f64f671400077fa59a721a1e3a1fef46161b29ee32066b6d22"
+      url "https://github.com/hotdata-dev/hotdata-cli/releases/download/v0.29.0/hotdata-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "57e13c1f3351f26460821b5be07cc4560bf78ec3de24d325c713cf5def227490"
     end
   end
 
